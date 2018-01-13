@@ -4,6 +4,7 @@ import './App.css';
 import ReactBasics from './comps/React-basics';
 import ExportFunc from './comps/export-func';
 import SendVars from './comps/send-vars-to-com';
+import SendChild from './comps/send-var-with-children';
 
 class App extends Component {
   render() {
@@ -19,7 +20,7 @@ class App extends Component {
         <h1>Main React comp</h1>
         <ReactBasics/>
         <ExportFunc/>
-
+        <SendChild>this is the child we send</SendChild>
 
       </div>
     );

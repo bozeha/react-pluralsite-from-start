@@ -5,12 +5,10 @@ class SendVars extends Component{
 
     render(props)
     {
-    
         return(
             <li className="li-topbar">            
                {this.props.uiname} 
             </li>
-
         )
     }
 }

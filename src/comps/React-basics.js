@@ -3,8 +3,6 @@ import React, {Component} from 'react';
 class ReactBasic extends Component{
     render()
     {
-
-
         /* return (
             <div>
             this is basic return 
@@ -12,8 +10,6 @@ class ReactBasic extends Component{
         ) */
         
         /// whats realy created in the background
-
-
 
         /// option 1 create element , the div is the element we creating
         // instead of null we can enter js object 
@@ -28,11 +24,6 @@ class ReactBasic extends Component{
         // in the second element instead of null we addin js object of className
         return React.createElement('div',{className:'divClass'},'this element return with className');
 
-
-        
-
-
-        
     }
 }
 

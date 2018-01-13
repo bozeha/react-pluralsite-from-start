@@ -1,0 +1,6 @@
+ul li {
+  color: pink;
+  float: right;
+  padding: 30px;
+  list-style: none;
+}

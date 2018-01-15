@@ -7,8 +7,7 @@ class ChangeStateFromComp extends Component
         
         console.log(this.props.changeState);
         return(
-            <h2 onClick={this.props.changeState}>the long weird way </h2>
-            
+            <h1 onClick={()=>this.props.test('testtttttttt')}>the new way testtt</h1>
         )
     }
 

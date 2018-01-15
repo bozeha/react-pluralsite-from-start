@@ -19,8 +19,11 @@ class App2 extends Component{
         condition:"false",
         value:false
         }
-        
-        ]
+        ],
+        deplecateValue:[{
+            theValue:"aaa"
+        }]
+
     }
 
      testTest =() =>
@@ -29,12 +32,17 @@ class App2 extends Component{
         console.log(this.state.showBlock.condition);
     }
 
-returnValue= (xxx) =>{
+returnValue= (yyy) =>{
     
         ///setState  will change the state object 
-        
-        this.setState({persons:[{name:'yyy'},{name:'yyy'}]})
-        console.log(this.state.showBlock.condition+'aaa');
+        /* this.setState({showBlock:[{condition:this.state.showBlock[0].condition+yyy},{name:'yyy'}]}) */
+        this.setState({deplecateValue:[{theValue:this.state.deplecateValue[0].theValue+yyy}]})
+        this.state.showBlock[0].condition=="true"?this.setState({showBlock:[{condition:"false"}]}):this.setState({showBlock:[{condition:"true"}]});
+        /* console.log(this.state);
+        console.log(this.state.showBlock[0].condition+'aaa');
+        */ 
+
+
       }
     
     render()
@@ -46,11 +54,14 @@ returnValue= (xxx) =>{
             }
     return(
         <div style={mainDivStile}>
-        {this.state.showBlock.condition?<div>xxxxx</div>:null}
+{/*         {this.state.showBlock.condition?<div>xxxxx</div>:null}
         {this.state.persons[1].name}
+        {this.state.showBlock[0].condition}
         {this.testTest()}
-        
-        <ConditionTorF sendBool={this.returnValue} currentBool={this.state.showBlock[0].condition}/>
+ */}        
+        {this.state.deplecateValue[0].theValue}
+        {/* <ConditionTorF sendBool={this.returnValue} currentBool={this.state.showBlock[0].condition}/> */}
+        <ConditionTorF sendBool={this.returnValue.bind(this)} currentVal={this.state.showBlock[0].condition}/>
         </div>
 
     )

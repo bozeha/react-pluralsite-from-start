@@ -82,7 +82,7 @@ class App extends Component {
 
           <p>for changing the state var from the child comp (not just run func)</p>
           <p>this will run the func switchName3 with param blabla</p>
-          
+          <p>what it do </p>
           <ChangeStateFromComp changeState={this.switchName3.bind(this,'blabla')}/>
 
 

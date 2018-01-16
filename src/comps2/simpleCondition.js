@@ -9,12 +9,9 @@ class ConditionTorF extends Component
         let xxx = this.props.currentBool;
         //let temp= this.props.currentBool;
         return(
-                <h1>
-                {/* <button onClick={()=>this.props.sendBool()}>{this.props.state.showBlock[0].condition} </button> */}
-                
+                <h1>     
                         {console.log(this.props+"xxxx")}
 
-                        {/* using arrow function onClick prevent loop */}
                     <button onClick={()=>this.props.sendBool('xxx')}>{  this.props.currentVal}</button>
                {this.props.currentVal == 'true' ?
                 <div>
@@ -24,11 +21,9 @@ class ConditionTorF extends Component
                 <p>block of code </p> 
                 </div>:null
                 }
-
                 </h1>
         )
     }
-
 }
 
 export default ConditionTorF;

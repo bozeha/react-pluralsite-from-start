@@ -11,15 +11,28 @@ class DeletChild extends Component
         ]
 
     }
-    deleteOne = (currentThis,num)=>{
-        const an = currentThis.animals;
+
+    /* currentTT is the => this  of the parent num is the index of the current element, 
+    currentThis is the list from state of parent */
+    deleteOne = (currentThis,num,currentTT)=>{
+        debugger;
+        /* we make a copy of the parent list state and save it in an  */
+        /* this way we will make copy of pointer */
+        const an1 = currentThis.animals;
+        /* this way we will make real copy */
+        const an2 = currentThis.animals.slice();
+        
+        /* this second way we will make real copy */
+        const an = [...currentThis.animals];
+
+
+        /* now we removing element from the copy of state list ,
+         num -> the index of element list we want to remove , 1 -> 
+         dnumber of element we whant to remove */
         an.splice(num,1);
-        console.log(currentThis.animals[num].name);
-        console.log(currentThis.animals);
-        /* console.log(an.animals); */
-        console.log(currentThis);
-        /* console.log(this.state); */
-        this.setState({animals: an});
+        
+        /* save in the parent state list the new copy with the changes  */
+        currentTT.setState({animals: an});
     
 
         //alert(currentThis.animals);
@@ -30,21 +43,9 @@ class DeletChild extends Component
         return(
 
                 <h5>
-                    {console.log(this.props.current)}
-                    {console.log('1')}
-                    {console.log(this.props.currentIndex)}
-
-
-
-                    {console.log('this is the perent state')}
-                    {console.log(this.props.currentThis.state)}
-                    {console.log('3')}
-
-                    
-                    {console.log('this is the current state')}
-                    {console.log(this.state)}
-                    {console.log('fullends')}
-                        <h4 onClick={()=>this.deleteOne(this.props.currentThis.state,this.props.currentIndex)}>{this.props.current}</h4>
+           
+                        <h4 onClick={()=>this.deleteOne(this.props.currentThis.state,this.props.currentIndex,this.props.currentThis)}>{this.props.current}</h4>
+                        {/* <input type="text" onChange={(event)=>{this.props.currentThis.setState({ animals:[{ name:event.target.value },{ name:event.target.value }] });}}/> */}
                 </h5>
         )
     }

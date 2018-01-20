@@ -17,26 +17,38 @@ class App3 extends Component
             }
     }
     changeAgeFunc=(event)=>{
-
-        alert(event.target.value);
         
-        debugger;
+
+        console.log(this.state);
+        
+        console.log(event.target.value);
             /* two ways to copy element from state, firs one : */
 
+            
+                    this.setState({
+                        
+                            persons:
+                                [1]
+                        
+                        //this.state.currentPerson.Cindex
+                    })
             /* const person1 ={
                 ...this.persons.state.persons[this.persons.state.currentPerson.Cindex]
             } */
             /* second way  */
-            const person2 = Object.assign({},this.persons.state.persons[this.persons.state.currentPerson.Cindex]);
+          //  const person2 = Object.assign({},this.persons.state.persons[this.persons.state.currentPerson.Cindex]);
 
-
-        this.setState({
-            persons:[]
-            //this.state.currentPerson.Cindex
-        })
         //setState({persons:})
     }
+
+    testFunc = ()=>
+    {
+        console.log(this.state)
+        debugger;
+    }
     changeName =(event)=>{
+        console.log(this.state);
+        
         /* console.log(event.target.value);
         console.log(this.state.persons[0].name); */
         
@@ -56,7 +68,6 @@ class App3 extends Component
                             id:currentName.id,name:currentName.name,age:currentName.age,Cindex:index
                         }
                     })
-                    debugger;
                 }
               
                 /* return currentName.name == event.target.value; */
@@ -72,7 +83,9 @@ class App3 extends Component
         return (
             <div>
             dddddddddddddddddddddddddd
-                <Person persons={this}  change={this.changeName} changeAge={this.changeAgeFunc}/>
+                <Person persons={this} testThis={this.testFunc} change={this.changeName} changeAge={this.changeAgeFunc}/>
+
+
             </div>
         )
     }

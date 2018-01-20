@@ -19,8 +19,8 @@ class Person extends Component
                 
                 {this.props.persons.state.value == 'true'?
                 <span>
-                    {console.log("in comp:")}
-                    {console.log(this.state)}
+                 {/*    {console.log("in comp:")}
+                    {console.log(this.state)} */}
                 <input type="text" onChange={(event)=>this.props.changeAge(event)}/>
                 <button onClick={this.props.testThis}>dddd</button>
                 </span>

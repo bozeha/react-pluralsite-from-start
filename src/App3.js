@@ -17,21 +17,32 @@ class App3 extends Component
             }
     }
     changeAgeFunc=(event)=>{
-        
+        this.setState({
+            currentPerson:
+            {
+                id:33,name:333,age:333,Cindex:333
+            }
+        })
 
         console.log(this.state);
-        
+        const test_index= 2;
+        const test_element = {test:'test'};
         console.log(event.target.value);
+debugger;
+        const  typeElements  = this.state;
+        const updatedHeaders = typeElements.persons.map((obj, index) => {
+          return index === test_index ? test_element : obj;
+        });
+        //const temp_state = {persons:[updatedHeaders]}
             /* two ways to copy element from state, firs one : */
-
-            
-                    this.setState({
+            {console.log(this.state)}
+     
+         /*            this.setState({
+                        persons:[
+                            {id:'111',name:'111',age:22}
+                        ]
                         
-                            persons:
-                                [1]
-                        
-                        //this.state.currentPerson.Cindex
-                    })
+                    }) */
             /* const person1 ={
                 ...this.persons.state.persons[this.persons.state.currentPerson.Cindex]
             } */
@@ -39,11 +50,20 @@ class App3 extends Component
           //  const person2 = Object.assign({},this.persons.state.persons[this.persons.state.currentPerson.Cindex]);
 
         //setState({persons:})
+        console.log('exit update age ');
+        console.log(updatedHeaders);
+        console.log(this.state);
     }
 
     testFunc = ()=>
     {
-        console.log(this.state)
+        console.log(this.state);
+        this.setState({
+            currentPerson:
+            {
+                id:44,name:444,age:44,Cindex:44
+            }
+        })
         debugger;
     }
     changeName =(event)=>{
@@ -68,6 +88,7 @@ class App3 extends Component
                             id:currentName.id,name:currentName.name,age:currentName.age,Cindex:index
                         }
                     })
+                   
                 }
               
                 /* return currentName.name == event.target.value; */

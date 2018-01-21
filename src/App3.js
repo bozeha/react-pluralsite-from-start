@@ -3,6 +3,7 @@ import Person from './comps3/person';
 
 class App3 extends Component 
 {
+    /* app3 state  */
     state = {
         persons:
             [
@@ -16,69 +17,50 @@ class App3 extends Component
                 id:'',name:'',age:'',Cindex:''
             }
     }
+
+    /* function that run from comp on change input get event  */
     changeAgeFunc=(event)=>{
-        this.setState({
-            currentPerson:
-            {
-                id:33,name:333,age:333,Cindex:333
-            }
-        })
-
-        console.log(this.state);
-        const test_index= 2;
-        const test_element = {test:'test'};
-        console.log(event.target.value);
-debugger;
-        const  typeElements  = this.state;
-        const updatedHeaders = typeElements.persons.map((obj, index) => {
-          return index === test_index ? test_element : obj;
-        });
-        //const temp_state = {persons:[updatedHeaders]}
-            /* two ways to copy element from state, firs one : */
-            {console.log(this.state)}
-     
-         /*            this.setState({
-                        persons:[
-                            {id:'111',name:'111',age:22}
-                        ]
-                        
-                    }) */
-            /* const person1 ={
-                ...this.persons.state.persons[this.persons.state.currentPerson.Cindex]
-            } */
-            /* second way  */
-          //  const person2 = Object.assign({},this.persons.state.persons[this.persons.state.currentPerson.Cindex]);
-
-        //setState({persons:})
-        console.log('exit update age ');
-        console.log(updatedHeaders);
-        console.log(this.state);
-    }
-
-    testFunc = ()=>
-    {
-        console.log(this.state);
-        this.setState({
-            currentPerson:
-            {
-                id:44,name:444,age:44,Cindex:44
-            }
-        })
         debugger;
+        const test_index= this.state.currentPerson.name;
+        const test_element = {age:event.target.value,name:this.state.currentPerson.name};
+        const  typeElements  = this.state;
+        
+        /* two ways to copy element from state to object  */
+        /* first way  */
+        const way1 ={
+            ...this.state.persons[1]
+        }
+        /* second way  */
+        const way2 = Object.assign({},this.state.persons[0]);
+        /* this test the values of every element in typeElements  
+        via map and make condition what to return */
+        const updatedHeaders = typeElements.persons.map((obj, index) => {
+          return obj.name === test_index ? test_element : obj;
+        });
+
+        /* save the new list we crated to state  */
+        this.setState({
+                persons:updatedHeaders            
+        })
+
     }
+// fucntion that will run on changing input event 
     changeName =(event)=>{
         console.log(this.state);
         
-        /* console.log(event.target.value);
-        console.log(this.state.persons[0].name); */
-        
+
+        //every change first make value in state false 
         this.setState({
             value:'false'
         })
+        // run on every one of persons from state compare 
+        //to event we receive from input 
         const pID =  this.state.persons.find((currentName,index)=>
             {
-                console.log(currentName.name+'X');
-                console.log(event.target.value+'Y');
+                
+                /* if currentName(scan every element with map) from 
+                state equal to event from input change state value to true */
+                /* and add the current person to element in state name currentPerson */
                 if (currentName.name == event.target.value)
                 {
                     this.setState({
@@ -90,10 +72,7 @@ debugger;
                     })
                    
                 }
-              
-                /* return currentName.name == event.target.value; */
-                /* return currentName == event.target.value; */
-                
+                              
             }
         )
         
@@ -103,10 +82,8 @@ debugger;
     {
         return (
             <div>
-            dddddddddddddddddddddddddd
+                {/* add person component and send few vars and function to it  */}
                 <Person persons={this} testThis={this.testFunc} change={this.changeName} changeAge={this.changeAgeFunc}/>
-
-
             </div>
         )
     }

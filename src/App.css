@@ -28,7 +28,8 @@
 }
 .red
 {
-  color:red;
+  color:pink;
+  font-size:20px;
 }
 .blue
 {
@@ -36,5 +37,5 @@
 }
 .bold
 {
-  font-size:bold;
+  font-weight:bold;
 }

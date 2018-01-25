@@ -6,7 +6,7 @@ import MediaQ from './comps4/media_query'
 /* and rap all the return in StyleRoot element  */
 /* you dont need it if you use only Pseudo like :hover */
 import Radium, { StyleRoot } from 'radium'
-import ErrorBoundary from './comps5/error_block'
+//import ErrorBoundary from './comps5/error_block'
 
 class App4 extends Component
 {
@@ -18,11 +18,11 @@ class App4 extends Component
             
                 <StyleRoot>            
                     <div>
-                    <ErrorBoundary>
+                    {/* <ErrorBoundary> */}
                         <StartStyle/>
                         <ButtonsStyle/>
                         <MediaQ/>
-                        </ErrorBoundary>
+                        {/* </ErrorBoundary> */}
                         aaa
                     </div>
                 </StyleRoot>

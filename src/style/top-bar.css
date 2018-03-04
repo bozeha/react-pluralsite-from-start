@@ -4,3 +4,9 @@ ul li {
   padding: 30px;
   list-style: none;
 }
+.gray {
+  color: gray;
+}
+.bold {
+  border: 1px solid red;
+}

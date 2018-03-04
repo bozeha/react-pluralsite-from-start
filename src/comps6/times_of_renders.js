@@ -3,7 +3,8 @@ import ChildR from './child_test'
 class TimesOfRender extends Component
 {
 
-    constructor(props){
+    constructor(props)
+    {
         super(props);
         //the code in constructor will only run once 
         //it will be the first thing that runs

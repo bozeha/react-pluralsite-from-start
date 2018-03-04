@@ -1,8 +1,10 @@
 import React, {Component} from 'react'
 
+
 /// for using spacial styles like Pseudo selector :hover we need to install
 //radium , import in to the component and rap it in the export 
 // like that : export default Radium(ButtonsStyle);
+import Aaa from './aaa'
 import Radium from 'radium'
 class ButtonsStyle extends Component
 {
@@ -24,12 +26,13 @@ class ButtonsStyle extends Component
         if(this.state.currentV ==  'true')
         {
             debugger;
-            classes.push('red');
             classes.push('bold');
+            classes.push('gray');
+           
         }
         else if (this.state.currentV ==  'false')
         {
-            classes.push('blue');
+            classes.push('gray');
             
         }
 
@@ -41,6 +44,10 @@ class ButtonsStyle extends Component
                 <p style={theRaduim}>Radium = >hover</p>
                 
                 </p>
+                <Aaa sendVar={'2222222222222'} >
+                ddddddd
+                sdfasdfasdf
+                </Aaa>
             </div>
         )
     }

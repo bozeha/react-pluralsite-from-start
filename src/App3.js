@@ -46,7 +46,7 @@ class App3 extends Component
     }
 // fucntion that will run on changing input event 
     changeName =(event)=>{
-        console.log(this.state);
+        console.log(this.state.persons);
         
 
         //every change first make value in state false 

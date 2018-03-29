@@ -8,6 +8,9 @@ import App4 from './App4';
 import App5 from './App5';
 import SpecialElement from './React_special_elements';
 import registerServiceWorker from './registerServiceWorker';
+
+
+
 //import functions from './functions-exp';
 
 /* ReactDOM.render(<App />, document.getElementById('root')); */

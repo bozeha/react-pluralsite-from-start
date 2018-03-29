@@ -13,6 +13,7 @@ import ChangeInput from './comps/input-change-live';
 
 
 
+
 class App extends Component {
 //// state is build in property that will runder the page every
 ///  time the params will be change 
